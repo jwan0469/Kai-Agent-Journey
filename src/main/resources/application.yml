@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: kai-agent
+  #  stdio
+  main:
+    web-application-type: none
+    banner-mode: off
+
+  ai:
+    dashscope:
+      api-key: "sk-0103ece78f5740c3b35882dff89bc7b5"
+      chat:
+        options:
+          model: qwen-plus
+    mcp:
+      client:
+        stdio:
+          servers-configuration: classpath:mcp-servers.json
+
+server:
+  port: 8123
+  servlet:
+    context-path: /api
+
+# springdoc-openapi
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: 'default'
+      paths-to-match: '/**'
+      packages-to-scan: com.kai.agent.controller
+
+# knife4j
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn
+
+# searchApi
+search-api:
+  api-key: "KZkmhk9rwoJTC385iBSdbUMr"
+

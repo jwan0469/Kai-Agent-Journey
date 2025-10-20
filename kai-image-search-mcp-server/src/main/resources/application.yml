@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: kai-image-search-mcp-server
+  profiles:
+    active: stdio
+server:
+  port: 8127
+
